@@ -46,7 +46,7 @@ Zookeeper 从设计模式角度来看，是一个**基于观察者模式设计�
     配置的管理在分布式应用环境中很常见，例如同一个应用系统需要多台 PC Server 运行，但是它们运行的应用系统的某些配置项是相同的，如果要修改这些相同的配置项，那么就必须同时修改每台运行这个应用系统的 PC Server，这样非常麻烦而且容易出错。
     像这样的配置信息完全可以交给 Zookeeper 来管理，将配置信息保存在 Zookeeper 的某个目录节点中，然后将所有需要修改的应用机器监控配置信息的状态，一旦配置信息发生变化，每台应用机器就会收到 Zookeeper 的通知，然后从 Zookeeper 获取新的配置信息应用到系统中。
 
-    ![配置管理结构图](/path/to/img.jpg "配置管理结构图")
+    ![配置管理结构图](https://github.com/suqun/zookeeper-note/blob/master/etc/configuration.gif "配置管理结构图")
 
 - 集群管理（Group Membership）
 
@@ -88,7 +88,7 @@ Observer服务器充当一个观察者的角色
 
 Zookeeper 会维护一个具有层次关系的数据结构，它非常类似于一个标准的文件系统
 
-![数据模型](/path/to/img.jpg "数据模型")
+![数据模型](https://github.com/suqun/zookeeper-note/blob/master/etc/znode.gif "数据模型")
 
 Zookeeper 这种数据结构有如下这些特点：
 
