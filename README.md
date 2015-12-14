@@ -146,7 +146,7 @@ ADMIN:设置节点ACL的权限
     * scp zoo.cfg root@192.168.1.107:/opt/zookeeper/conf
 - 在var目录下创建zookeeper目录
     * cd /var && mkdir zookeeper
-- 在var目录下创建myid文件,内容为server.id的id值
+- 在var/zookeeper目录下创建myid文件,内容为server.id的id值
     * vim myid
     * 1
     * wq!
@@ -158,11 +158,41 @@ ADMIN:设置节点ACL的权限
     * stat (显示当前服务器不能对外提供服务，需要其他其他2台)
 
 ####伪集群模式安装
-- 同一个服务模拟集群，配置相同IP地址不同端口，其他集群安装配置
-    - server.1=192.168.1.105:2888:3888
-    - server.2=192.168.1.105:2889:3889
-    - server.3=192.168.1.105:2890:3890
-
+- 配置
+    - cd zookeeper/conf/
+    - cp zoo_sample.cfg zk1.cfg
+    - vim zk1.cfg
+        - dataDir=/var/zookeeper/zk1
+        - clientPort=2181
+        - server.1=192.168.1.105:2888:3888
+        - server.2=192.168.1.105:2889:3889
+        - server.3=192.168.1.105:2890:3890
+    - cp zk1.cfg zk2.cfg
+        - dataDir=/var/zookeeper/zk2
+        - clientPort=2182
+        - server.1=192.168.1.105:2888:3888
+        - server.2=192.168.1.105:2889:3889
+        - server.3=192.168.1.105:2890:3890
+    - cp zk1.cfg zk3.cfg
+        - dataDir=/var/zookeeper/zk3
+        - clientPort=2183
+        - server.1=192.168.1.105:2888:3888
+        - server.2=192.168.1.105:2889:3889
+        - server.3=192.168.1.105:2890:3890
+    - 在var/zookeeper/zk1(zk2,zk3)目录下创建myid文件,内容为server.id的id值
+        - vim myid
+        - 1
+        - wq!
+        
+- 启动zookeeper
+    * cd /opt/zookeeper
+    * ./zkserver.sh start zk1.cfg
+    * ./zkserver.sh start zk2.cfg
+    * ./zkserver.sh start zk3.cfg
+    * 查看节点状态
+        - ./zkServer.sh status zk1.cfg
+        - ./zkServer.sh status zk2.cfg 
+        - ./zkServer.sh status zk3.cfg 
 ####单机模式安装
 - 保留一台服务器，其他集群安装配置
     - server.1=192.168.1.105:2888:3888
