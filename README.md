@@ -193,6 +193,7 @@ ADMIN:设置节点ACL的权限
         - ./zkServer.sh status zk1.cfg
         - ./zkServer.sh status zk2.cfg 
         - ./zkServer.sh status zk3.cfg 
+        
 ####单机模式安装
 - 保留一台服务器，其他集群安装配置
     - server.1=192.168.1.105:2888:3888
