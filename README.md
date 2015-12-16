@@ -515,6 +515,24 @@ Output stat for /node_test count=4,bytes=12
 - **quit** 退出zookeeper客户端连接
 
 
+##权限
+
+- 权限模式(scheme)
+    - ip
+    - digest
+- 授权对象(ID)
+    - ip权限模式:具体的ip地址
+    - digest权限模式:username:Base64(SHA-1(username:password))
+- 权限(permission)
+    - create(C)
+    - delete(D)
+    - READ(R)
+    - WRITE(W)
+    - ADMIN(A)
+- 权限组合:scheme + ID + permission
+   
+
+
 [笔记来自于极客学院zookeeper视频](http://www.jikexueyuan.com/course/1813.html)
 
 [分布式服务框架 Zookeeper -- 管理分布式环境中的数据](http://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/)
