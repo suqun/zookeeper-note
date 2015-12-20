@@ -12,8 +12,12 @@
     * cd zookeeper/conf/
     * cp zoo_sample.cfg zoo.cfg
     * vim zoo.cfg
+        - tickTime=2000
+            - the basic time unit in milliseconds used by ZooKeeper. It is used to do heartbeats and the minimum session timeout will be twice the tickTime.
         - dataDir=/var/zookeeper
+            - the location to store the in-memory database snapshots and, unless specified otherwise, the transaction log of updates to the database.
         - clientPort=2181
+            - the port to listen for client connections
         - 配置服务器 server.id=host:port:port
         - server.1=192.168.1.105:2888:3888
         - server.2=192.168.1.106:2888:3888
@@ -40,18 +44,21 @@
     - cd zookeeper/conf/
     - cp zoo_sample.cfg zk1.cfg
     - vim zk1.cfg
+        - tickTime=2000
         - dataDir=/var/zookeeper/zk1
         - clientPort=2181
         - server.1=192.168.1.105:2888:3888
         - server.2=192.168.1.105:2889:3889
         - server.3=192.168.1.105:2890:3890
     - cp zk1.cfg zk2.cfg
+        - tickTime=2000
         - dataDir=/var/zookeeper/zk2
         - clientPort=2182
         - server.1=192.168.1.105:2888:3888
         - server.2=192.168.1.105:2889:3889
         - server.3=192.168.1.105:2890:3890
     - cp zk1.cfg zk3.cfg
+        - tickTime=2000
         - dataDir=/var/zookeeper/zk3
         - clientPort=2183
         - server.1=192.168.1.105:2888:3888
