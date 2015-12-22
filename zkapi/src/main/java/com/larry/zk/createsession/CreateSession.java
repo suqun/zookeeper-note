@@ -1,4 +1,4 @@
-package com.larry.zkapi.createsession;
+package com.larry.zk.createsession;
 
 import org.apache.zookeeper.ZooKeeper;
 

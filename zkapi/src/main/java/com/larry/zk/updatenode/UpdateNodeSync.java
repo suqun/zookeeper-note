@@ -1,6 +1,6 @@
-package com.larry.zkapi.updatenode;
+package com.larry.zk.updatenode;
 
-import com.larry.zkapi.getchildren.GetChildrenAsync;
+import com.larry.zk.getchildren.GetChildrenAsync;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

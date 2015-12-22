@@ -1,4 +1,4 @@
-package com.larry.zkapi.deletenode;
+package com.larry.zk.deletenode;
 
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;

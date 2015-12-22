@@ -1,4 +1,4 @@
-package com.larry.zkapi.updatenode;
+package com.larry.zk.updatenode;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
